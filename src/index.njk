@@ -9,6 +9,17 @@ layout: base.njk
     <div class="sport">
        
       </div>
+      <ul>
+      {% for club in teams.clubs %}
+    
+    <li>
+      {{club.name}}
+      {{club.img}}
+    </li>
+    
+    
+  {% endfor %}
+  </ul>
     
   </div>
   <script src="/js/sport.js"></script>
