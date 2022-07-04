@@ -1,30 +1,11 @@
-{
-    "clubs": [
-      {
-        "name": "Aston Villa FC",
-        "code": "AVL",
-        "country": "England",
-        "img": "/_data/images/EPL/astonvilla.png"
-      },
-      
+ [
     {
       "name": "West Ham United FC",
       "code": "WHU",
       "country": "England",
       "img": "/_data/images/EPL/westham.png"
     },
-    {
-      "name": "Stoke City FC",
-      "code": "STK",
-      "country": "England",
-      "img": "/_data/images/EPL/stokecity.jpg"
-    },
-    {
-      "name": "Sunderland AFC",
-      "code": "SUN",
-      "country": "England",
-      "img": "/_data/images/EPL/sunderland.png"
-    },
+    
     {
       "name": "Everton FC",
       "code": "EVE",
@@ -36,6 +17,7 @@
       "code": "TOT",
       "country": "England",
       "img": "/_data/images/EPL/tottenham.png"
+      
     },
     {
       "name": "Manchester City FC",
@@ -48,18 +30,15 @@
       "code": "CHE",
       "country": "England",
       "img": "/_data/images/EPL/chelsea.png"
+      
     },
-    {
-      "name": "West Bromwich Albion FC",
-      "code": "WBA",
-      "country": "England",
-      "img": "/_data/images/EPL/westbrom.png"
-    },
+    
     {
       "name": "Liverpool FC",
       "code": "LIV",
       "country": "England",
       "img": "/_data/images/EPL/liverpool.png"
+     
     },
     {
       "name": "Arsenal FC",
@@ -72,6 +51,7 @@
       "code": "MUN",
       "country": "England",
       "img": "/_data/images/EPL/manunited.png"
+     
     },
     {
       "name": "Newcastle United FC",
@@ -80,22 +60,10 @@
       "img": "/_data/images/EPL/newcastle.png"
     },
     {
-      "name": "Norwich City FC",
-      "code": "NOR",
-      "country": "England",
-      "img": "/_data/images/EPL/norwich.png"
-    },
-    {
       "name": "Watford FC",
       "code": "WAT",
       "country": "England",
       "img": "/_data/images/EPL/watford.png"
-    },
-    {
-      "name": "Swansea City FC",
-      "code": "SWA",
-      "country": "Wales",
-      "img": "/_data/images/EPL/swansea.png"
     },
     {
       "name": "Crystal Palace FC",
@@ -120,7 +88,7 @@
       "code": "BOU",
       "country": "England",
       "img": "/_data/images/EPL/bournemouth.png"
+      
     }
-    
-    ]
-  }
+  
+  ]

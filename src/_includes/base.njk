@@ -5,16 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title }}</title>
   <style>
+ 
     body {
       text-align:center;
+       
     }
     div.container {
       width:400px;
       margin: 0 auto;
+      
     }
     div.sport{
       font-size: 4em;
     }
+    div#top{
+       
+        
+        top: 0;
+        width: auto;
+        background-color: silver;
+        color: "white";
+        text-align: center;
+    }
+     div.chart {
+      width:auto;
+       height:500px;
+      
+        }
+        a:hover {
+  color: green;
+}
+
 
    .paging {
   position: fixed;
@@ -25,13 +46,32 @@
   color: black;
   text-align: center;
 }
+div#top ul li { display: inline;
+				border-radius: 100px;
+				background: 	transparent;
+				margin: 20px;
+				padding: 10px;
+				line-height: 5;
+				font-weight: bold;
+				font-size: 0.9625em;
+        color: white
+        
+      }
 
 li{
   display: inline
 }
-    
-  </style>
+</style>
 </head>
+<div id = "top">
+			<ul>
+				<li><a href  = "/../home"> Home </li>
+				<li><a href="/soccer">EPL Teams</a></li> 
+				<li><a href  = "/about">About</a></li>
+        <li></li> 
+        <li><a href="#" onClick="history.go(-1)">Previous page</a></li>
+			</ul>
+		</div>
 <body>
   {{ content | safe}}
 </body>

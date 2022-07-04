@@ -1,0 +1,67 @@
+---
+title: Goals Stats
+layout: base.njk
+---
+
+<h1>GOALS⚽⚽⚽⚽⚽</h1>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script>
+
+    // Visualization API with the Line chart package.
+    google.charts.load('current', { packages: ['line'] });
+    google.charts.setOnLoadCallback(drawLineChart);
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const name_ = urlParams.get('name');
+    
+    var statsurl =  "/_data/stats/"+name_+".json"
+    function drawLineChart() {
+        $.ajax({
+            url: statsurl,
+            dataType: "json",
+            type: "GET",
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                var arrGoals = [['Interval', 'Goals Scored','Goals Conceded']];    // Define an array and assign columns for the chart.
+
+                // Loop through each data and populate the array.
+                $.each(data, function (index, value) {
+                    arrGoals.push([value.Interval, value.Goals_Scored, value.Goals_Conceded]);
+                });
+
+                // Set chart Options.
+                var options = {
+                    chart: {
+                        title: name_+' Goals Scored and conceded per 10 minute interval',
+                       
+                    },
+                    backgroundColor: 'black',
+                    
+                    axes: {
+                        x: {
+                            0: { side: 'bottom'}   // Use "top" or "bottom".
+                        },
+                        y: {
+                            0: { side: 'left'}   // Use "top" or "bottom".
+                        }
+                    }
+                };
+
+                // Create DataTable and add the array to it.
+                var figures = google.visualization.arrayToDataTable(arrGoals)
+
+                // Define the chart type (LineChart) and the container (a DIV in our case).
+                var chart = new google.charts.Line(document.getElementById('chart'))
+
+                // Draw the chart with Options.
+                chart.draw(figures, google.charts.Line.convertOptions(options));
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert('Got an Error');
+            }
+        });
+    }
+</script>
+<div id="chart" class ="chart"></div> 
+

@@ -1,0 +1,47 @@
+[
+ {
+  "Interval": "t10",
+  "Goals_Scored": 3,
+  "Goals_Conceded": 5
+ },
+ {
+  "Interval": "t20",
+  "Goals_Scored": 8,
+  "Goals_Conceded": 6
+ },
+ {
+  "Interval": "t30",
+  "Goals_Scored": 4,
+  "Goals_Conceded": 6
+ },
+ {
+  "Interval": "t40",
+  "Goals_Scored": 3,
+  "Goals_Conceded": 7
+ },
+ {
+  "Interval": "t50",
+  "Goals_Scored": 7,
+  "Goals_Conceded": 6
+ },
+ {
+  "Interval": "t60",
+  "Goals_Scored": 7,
+  "Goals_Conceded": 12
+ },
+ {
+  "Interval": "t70",
+  "Goals_Scored": 3,
+  "Goals_Conceded": 5
+ },
+ {
+  "Interval": "t80",
+  "Goals_Scored": 5,
+  "Goals_Conceded": 4
+ },
+ {
+  "Interval": "t90",
+  "Goals_Scored": 5,
+  "Goals_Conceded": 14
+ }
+]

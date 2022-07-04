@@ -2,14 +2,14 @@
 title: Soccer teams
 layout: base.njk
 pagination:
-  data: teams.clubs
-  size: 4
+  data: teams
+  size: 3
 ---
 
 # {{ title }}  
 
-<table class="table table-bordered table-striped" style="margin-left:auto;margin-right:auto;">
-<tbody>
+<table class="table" style="margin-left:auto;margin-right:auto;">
+<tbody >
 <tr>
 {% for item in pagination.items %}
   <td>
@@ -20,21 +20,12 @@ pagination:
   <tr>
   {% for item in pagination.items %}
   <td>
-  
-  {{ item.name }}
-
+  <a href="/GoalStats?name={{ item.name }}">{{ item.name }}</a>
+  <!-- <a href="/{{ item.name }}_teamstats?name={{ item.name }}">{{ item.name }}</a> -->
+ 
   </td>
   {% endfor %}
   </tr>
-
-  
-
-  
-  
-  
-  
-
-
 </tbody>
 </table>
 
