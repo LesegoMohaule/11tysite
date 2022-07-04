@@ -1,5 +1,5 @@
 ---
-title: Soccer teams
+title: 2018 - 2019 EPL teams
 layout: base.njk
 pagination:
   data: teams
