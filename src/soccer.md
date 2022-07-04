@@ -13,7 +13,9 @@ pagination:
 <tr>
 {% for item in pagination.items %}
   <td>
+  <a href="/GoalStats?name={{ item.name }}">
   <img src="{{item.img}}" alt="{{item.name}}" width="200" height = "300"/>
+  </a>
   </td>
     {% endfor %}
   </tr>
