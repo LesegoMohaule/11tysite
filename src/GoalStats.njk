@@ -2,20 +2,45 @@
 title: Goals Stats
 layout: base.njk
 ---
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+const urlParams = new URLSearchParams(window.location.search);
+    const name_ = urlParams.get('name');
+    
+    var name1 = name_.toString();
+    var b = name1.split("|");
+    console.log(b[1]);
+
+function display_image(src, width, height, alt) {
+    var c = document.createElement("img");
+    c.src = src;
+    c.width = width;
+    c.height = height;
+    c.alt = alt;
+    document.body.appendChild(c);
+}
+display_image(b[1], 
+                 100, 
+                 100, 
+                 'Team logo');
+</script>
+
 
 <h1>GOALS⚽⚽⚽⚽⚽</h1>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script>
-
     // Visualization API with the Line chart package.
     google.charts.load('current', { packages: ['line'] });
     google.charts.setOnLoadCallback(drawLineChart);
-
-    const urlParams = new URLSearchParams(window.location.search);
-    const name_ = urlParams.get('name');
+    //const urlParams = new URLSearchParams(window.location.search);
+    //const name_ = urlParams.get('name');
     
-    var statsurl =  "/_data/stats/"+name_+".json"
+    //var name1 = name_.toString();
+    //var a = name1.split("|");
+    console.log(b[0]);
+
+    var statsurl =  "/_data/stats/"+b[0]+".json"
     function drawLineChart() {
         $.ajax({
             url: statsurl,
@@ -24,16 +49,14 @@ layout: base.njk
             contentType: "application/json; charset=utf-8",
             success: function (data) {
                 var arrGoals = [['Interval', 'Goals Scored','Goals Conceded']];    // Define an array and assign columns for the chart.
-
                 // Loop through each data and populate the array.
                 $.each(data, function (index, value) {
                     arrGoals.push([value.Interval, value.Goals_Scored, value.Goals_Conceded]);
                 });
-
                 // Set chart Options.
                 var options = {
                     chart: {
-                        title: name_+' Goals Scored and conceded per 10 minute interval',
+                        title: b[0]+' Goals Scored and conceded per 10 minute interval',
                        
                     },
                     backgroundColor: 'black',
@@ -47,13 +70,10 @@ layout: base.njk
                         }
                     }
                 };
-
                 // Create DataTable and add the array to it.
                 var figures = google.visualization.arrayToDataTable(arrGoals)
-
                 // Define the chart type (LineChart) and the container (a DIV in our case).
                 var chart = new google.charts.Line(document.getElementById('chart'))
-
                 // Draw the chart with Options.
                 chart.draw(figures, google.charts.Line.convertOptions(options));
             },
@@ -64,4 +84,3 @@ layout: base.njk
     }
 </script>
 <div id="chart" class ="chart"></div> 
-

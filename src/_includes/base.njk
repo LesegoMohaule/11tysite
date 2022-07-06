@@ -1,13 +1,20 @@
+---
+data: teams
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   <title>{{ title }}</title>
   <style>
  
     body {
       text-align:center;
+    
        
     }
     div.container {
@@ -18,13 +25,11 @@
     div.sport{
       font-size: 4em;
     }
-    div#top{
-       
-        
+    .top{
         top: 0;
         width: auto;
         background-color: silver;
-        color: "white";
+        color: "purple";
         text-align: center;
     }
      div.chart {
@@ -38,23 +43,41 @@
 
 
    .paging {
+    background: 	transparent;
   position: fixed;
-  left: 0;
+  left: auto;
   bottom: 0;
   width: 100%;
   background-color: silver;
   color: black;
   text-align: center;
 }
-div#top ul li { display: inline;
-				border-radius: 100px;
+div#paging ul li { 
 				background: 	transparent;
-				margin: 20px;
-				padding: 10px;
-				line-height: 5;
 				font-weight: bold;
 				font-size: 0.9625em;
-        color: white
+        color: purple;
+        border-top: 0 none;
+        border-left: 0 none;
+        border-right: 0 none;
+        border-bottom: 0 none;
+        
+      }
+      .top ul li a:hover {
+color:green;}
+
+.paging ul li a:hover {
+color:green;}
+
+div#top ul li { display: inline;
+				background: 	transparent;
+				font-weight: bold;
+				font-size: 0.9625em;
+        color: purple;
+        border-top: 0 none;
+        border-left: 0 none;
+        border-right: 0 none;
+        border-bottom: 0 none;
         
       }
 
@@ -63,16 +86,27 @@ li{
 }
 </style>
 </head>
-<div id = "top">
-			<ul>
-				<li><a href  = "/../home"> Home </li>
-				<li><a href="/soccer">EPL Teams</a></li> 
-				<li><a href  = "/about">About</a></li>
-        <li></li> 
-        <li><a href="#" onClick="history.go(-1)">Previous page</a></li>
+<div class="top navbar-collapse  d-flex justify-content-center" id = "top">
+			<ul class="list-group list-group-horizontal">
+				<li class="list-group-item"><a class="nav-link" href  = "/../home"> Home </li>
+				<li class="list-group-item">
+        <div class="dropdown">
+        <a href="/soccer" style="color:purple" class="dropdown-toggle text-decoration-none" data-bs-toggle="dropdown">EPL Teams</a>
+        <div class="dropdown-menu">
+        <a href="/soccer" class="dropdown-item">All Teams</a>
+        {% for club in teams %}
+        <a href="/GoalStats?name={{ club.name }}|{{ club.img }}" class="dropdown-item">{{ club.name }}</a>
+        {% endfor %}
+        </div>
+        </div>
+        <li class="list-group-item"><a class="nav-link" href  = "/about">About</a></li>
+        <li class="list-group-item"></li> 
+        <li class="list-group-item"><a class="nav-link" href="#" onClick="history.go(-1)">Previous page</a></li>
 			</ul>
 		</div>
 <body>
   {{ content | safe}}
+  <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>
