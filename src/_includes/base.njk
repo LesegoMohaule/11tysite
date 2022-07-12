@@ -13,12 +13,11 @@ data: teams
   <style>
  
     body {
-      text-align:center; 
-      margin-top: 40px;  
+      text-align:center;  
        
     }
     div.container {
-      width:400px;
+      width:50%;
       margin: 0 auto;
       
     }
@@ -34,9 +33,20 @@ data: teams
         color: "purple";
         text-align: center;
     }
-     div.chart {
-      width:auto;
-       height:500px;
+     .chart {
+      width: 100%;
+      min-height: 450px;
+      margin: 0 auto !important;
+      text-align:center !important;
+      display: inline-block;
+      
+        }
+        div.chart {
+      width: 100%;
+      min-height: 450px;
+      margin: 0 auto !important;
+      text-align:center !important;
+      display: inline-block;
       
         }
         a:hover {
@@ -45,8 +55,8 @@ data: teams
 
 
    .paging {
+    position: fixed;
     background: 	transparent;
-  position: fixed;
   left: auto;
   bottom: 0;
   width: 100%;
@@ -55,9 +65,10 @@ data: teams
   text-align: center;
 }
 div#paging ul li { 
+        
 				background: 	transparent;
 				font-weight: bold;
-				font-size: 0.9625em;
+				font-size: 1em;
         color: purple;
         border-top: 0 none;
         border-left: 0 none;
@@ -106,7 +117,7 @@ li{
         <li class="list-group-item"><a class="nav-link" href="#" onClick="history.go(-1)">Previous page</a></li>
 			</ul>
 		</div>
-<body>
+<body class="mt-5 mb-5 pt-4 overflow-auto">
   {{ content | safe}}
   <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>

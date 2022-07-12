@@ -26,12 +26,12 @@ display_image(b[1],
 </script>
 
 
-<h1>GOALS⚽⚽⚽⚽⚽</h1>
+<h1>GOALS</h1>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script>
     // Visualization API with the Line chart package.
-    google.charts.load('current', { packages: ['line'] });
+    google.charts.load('current', { 'packages':['corechart', 'line']});
     google.charts.setOnLoadCallback(drawLineChart);
     //const urlParams = new URLSearchParams(window.location.search);
     //const name_ = urlParams.get('name');
@@ -55,27 +55,25 @@ display_image(b[1],
                 });
                 // Set chart Options.
                 var options = {
-                    chart: {
-                        title: b[0]+' Goals Scored and conceded per 10 minute interval',
-                       
+                    title: b[0]+' Goals scored and conceded per 10 minute interval',
+                    pointSize: 5,
+                    hAxis: {'title': 'Interval',
                     },
-                    backgroundColor: 'black',
                     
-                    axes: {
-                        x: {
-                            0: { side: 'bottom'}   
-                        },
-                        y: {
-                            0: { side: 'left'}   
-                        }
+                    backgroundColor: 'white',
+
+                    vAxis: {'title': 'Goals',
+                    ticks: [0,2,4,6,8,10,12,14,16,18,20]
                     }
+                    
+                    
                 };
                 // Create DataTable and add the array to it.
                 var figures = google.visualization.arrayToDataTable(arrGoals)
                 // Define the chart type (LineChart) and the container (a DIV in our case).
-                var chart = new google.charts.Line(document.getElementById('chart'))
+                var chart = new google.visualization.LineChart(document.getElementById('chart'))
                 // Draw the chart with Options.
-                chart.draw(figures, google.charts.Line.convertOptions(options));
+                chart.draw(figures,options);
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
                 alert('Got an Error');
@@ -83,4 +81,8 @@ display_image(b[1],
         });
     }
 </script>
+<class = "row">
+<div class="col-12">
 <div id="chart" class ="chart"></div> 
+</div>
+</div>
