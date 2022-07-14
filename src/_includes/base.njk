@@ -53,6 +53,21 @@ data: teams
   color: green;
 }
 
+a:link { text-decoration: none; color:purple; }
+
+.google-maps {
+    position: relative;
+    overflow: show;
+    height: 100% !important;
+    width: 100% !important;
+    padding-bottom: 5%
+    
+  }
+  .google-maps iframe {
+    width: 75% !important;
+    height: 100% !important;
+  }
+
 
    .paging {
     position: fixed;
@@ -95,16 +110,18 @@ div#top ul li { display: inline;
       }
 
 li{
-  display: inline
+  list-style-type: none;
+  
 }
 </style>
 </head>
 <div class="top navbar-collapse  d-flex justify-content-center" id = "top">
 			<ul class="list-group list-group-horizontal">
 				<li class="list-group-item"><a class="nav-link" href  = "/../home"> Home </li>
+        <li class="list-group-item"><a class="nav-link" href  = "/squads">Squads</a></li>
 				<li class="list-group-item">
         <div class="dropdown">
-        <a href="/soccer" style="color:purple" class="dropdown-toggle text-decoration-none" data-bs-toggle="dropdown">EPL Teams</a>
+        <a href="/soccer" style="color:purple" class="dropdown-toggle text-decoration-none" data-bs-toggle="dropdown">Goals Stats</a>
         <div class="dropdown-menu">
         <a href="/soccer" class="dropdown-item">All Teams</a>
         {% for club in teams %}
@@ -113,7 +130,6 @@ li{
         </div>
         </div>
         <li class="list-group-item"><a class="nav-link" href  = "/about">About</a></li>
-        <li class="list-group-item"></li> 
         <li class="list-group-item"><a class="nav-link" href="#" onClick="history.go(-1)">Previous page</a></li>
 			</ul>
 		</div>

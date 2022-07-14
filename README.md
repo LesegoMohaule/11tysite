@@ -118,6 +118,15 @@ The Goalstats.njk file uses a Google Charts API to display the charts in runtime
 The markup as it is shows a team's goals chart and the logo of the team with the base.njk 
 template.
 
+## Squads
+
+Create a squad.njk layout template which inherits from the base.njk template as shown in the 
+_includes folder. Also create a squadslist.njk file in the _includes folder. The markup is 
+as it is the files. Create a folder called squads inside the src folder. Inside the squads folder 
+create the .md files of each team. The layout is the same. Create a squads.njk file in the src folder. 
+This is where the list of the links to the squads will be displayed. 
+
+
 
 ## References
 

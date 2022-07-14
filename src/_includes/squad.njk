@@ -1,0 +1,19 @@
+--- 
+layout: base.njk 
+---
+<h2>{{ title }}</h2>
+<div class = "row">
+<div class="col-5" id="squadlogo">
+<img src="{{ TeamLogo | url }}"class="img-fluid" alt="{{ TeamLogo }}"></img>
+</div>
+<div class="col-7" id="map">
+<div class="google-maps">
+<strong>
+<p> Home Ground Location</p>
+</strong>
+<iframe src="{{ StadiumLocation | url }}" width="600" height="400" style="border:2;" 
+allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
+</div>
+</div>
+</div>
+<div>{{ content | safe }}</div>

@@ -1,0 +1,13 @@
+<ul>
+    {% for squad in squadslist %}
+        <li>
+            <strong>
+                <a href="{{ squad.url | url }}">{{ squad.data.title }}</a>
+            </strong>
+            -
+            <span>
+                {{ squad.data.description }}
+            </span>
+        </li>
+    {% endfor %}
+</ul>
